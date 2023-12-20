@@ -51,7 +51,7 @@ fetchCharacters();
 
 /**** Control Buttons ****/
 nextButton.addEventListener("click", () => {
-  page <= maxPage ? (page += 1) : null;
+  page < maxPage ? (page += 1) : null;
   fetchCharacters();
 });
 
