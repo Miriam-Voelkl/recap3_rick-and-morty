@@ -28,14 +28,15 @@ async function fetchCharacters() {
     const data = await response.json();
     console.log("Data:", data.results);
 
-    const characterArray = data.results.forEach((character) => {
-      CharacterCard(
+    const characterList = data.results.forEach((character) => {
+      const newCard = CharacterCard(
         character.image,
         character.name,
         character.status,
         character.type,
-        character.occurences
+        character.episode.length
       );
+      cardContainer.append(newCard);
     });
   } catch (error) {
     console.error("Error:", error.message);

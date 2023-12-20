@@ -29,4 +29,5 @@ export function CharacterCard(
             </dl>
           </div>
   `;
+  return newCard;
 }
