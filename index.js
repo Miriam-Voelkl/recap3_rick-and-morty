@@ -21,7 +21,7 @@ async function fetchCharacters() {
   cardContainer.innerHTML = "";
   try {
     const response = await fetch(
-      `https://rickandmortyapi.com/api/character/?page=${page}` //ohne "Index"!
+      `https://rickandmortyapi.com/api/character?page=${page}` //ohne "Index"!
     );
 
     if (!response.ok) {
@@ -44,8 +44,8 @@ async function fetchCharacters() {
   } catch (error) {
     console.error("Error:", error.message);
   }
-  pagination.innerHTML = page + "/" + maxPage;
   console.log("page number: ", page);
+  pagination.innerHTML = page + " / " + maxPage;
 }
 fetchCharacters();
 
