@@ -6,7 +6,7 @@ export function CharacterCard(
   characterOccurences
 ) {
   const newCard = document.createElement("li");
-  cardContainer.append(newCard);
+  //   cardContainer.append(newCard);
   newCard.classList.add("card");
   newCard.innerHTML = `
   <div class="card__image-container">
