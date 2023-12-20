@@ -28,6 +28,8 @@ async function fetchCharacters() {
     const data = await response.json();
     console.log("Data:", data.results);
 
+    cardContainer.innerHTML = "";
+
     const characterList = data.results.forEach((character) => {
       const newCard = CharacterCard(
         character.image,
