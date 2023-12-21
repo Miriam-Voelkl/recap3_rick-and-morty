@@ -1,3 +1,4 @@
+/* Prev and Next Buttons are created and appended to the HTML */
 import { onNextButtonClick, onPrevButtonClick } from "../../index.js";
 import { NavPagination } from "../NavPagination/NavPagination.js";
 
@@ -18,6 +19,7 @@ export function NavButton() {
   }
   const navigationContainer = document.querySelector('[data-js="navigation"]');
 
+  /*** You can set the order of the displayed buttons ***/
   navigationContainer.append(prevButton);
   navigationContainer.append(NavPagination());
   navigationContainer.append(nextButton);
