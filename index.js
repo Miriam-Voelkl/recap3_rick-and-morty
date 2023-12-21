@@ -1,4 +1,6 @@
 import { CharacterCard } from "./components/CharacterCard/CharacterCard.js";
+import { NavButton } from "./components/NavButton/NavButton.js";
+import { NavPagination } from "./components/NavPagination/NavPagination.js";
 
 const cardContainer = document.querySelector('[data-js="card-container"]');
 const searchBarContainer = document.querySelector(
@@ -52,16 +54,16 @@ async function fetchCharacters() {
 }
 fetchCharacters();
 
-/**** Control Buttons ****/
-nextButton.addEventListener("click", () => {
-  page < maxPage ? (page += 1) : null;
-  fetchCharacters();
-});
+// /**** Control Buttons ****/
+// nextButton.addEventListener("click", () => {
+//   page < maxPage ? (page += 1) : null;
+//   fetchCharacters();
+// });
 
-prevButton.addEventListener("click", () => {
-  page >= 2 ? (page -= 1) : null;
-  fetchCharacters();
-});
+// prevButton.addEventListener("click", () => {
+//   page >= 2 ? (page -= 1) : null;
+//   fetchCharacters();
+// });
 
 // search bar
 searchBar.addEventListener("submit", (event) => {
@@ -70,3 +72,13 @@ searchBar.addEventListener("submit", (event) => {
   searchQuery = formElements.query.value;
   fetchCharacters();
 });
+
+export function onPrevButtonClick() {
+  page >= 2 ? (page -= 1) : null;
+  fetchCharacters();
+}
+
+export function onNextButtonClick() {
+  page < maxPage ? (page += 1) : null;
+  fetchCharacters();
+}

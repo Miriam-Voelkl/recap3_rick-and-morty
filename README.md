@@ -107,7 +107,7 @@ However, we want to tidy up our code so that not everything is written in a sing
   the `index.html`. Remove the HTML code and generate them via JavaScript. Use the respective
   JavaScript component files for that.
 - The component functions should be called `NavButton`, `NavPagination`, and `SearchBar`
-  and should return the created elements.
+  and should return the created elements. 
 - HINT: It is challenging to get the event listener functions right for these components. Use an
   extra input parameter `onClick` or `onSubmit` in your components.
 - Use the create functions inside your `index.js` to generate the UI components. You'll need to
