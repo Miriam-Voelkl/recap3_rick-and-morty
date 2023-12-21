@@ -41,7 +41,7 @@ async function fetchCharacters() {
       cardContainer.append(newCard);
     });
 
-    maxPage = data.info.pages;
+    maxPage = data.info.pages; //sets maxPage to the according value from the JSON
     console.log("data info pages", data.info.pages);
     console.log("page number: ", page);
     pagination.innerHTML = page + " / " + maxPage;
@@ -53,18 +53,20 @@ fetchCharacters();
 
 // search bar
 searchBar.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const formElements = event.target.elements;
-  searchQuery = formElements.query.value;
-  fetchCharacters();
+  event.preventDefault(); //prevents page refresh on submit
+  const formElements = event.target.elements; //element contains the data of the form
+  searchQuery = formElements.query.value; //we use the >value< of the inpur field
+  fetchCharacters(); //fetcthes new data on refresh
 });
 
 export function onPrevButtonClick() {
+  //increases page index by 1
   page >= 2 ? (page -= 1) : null;
   fetchCharacters();
 }
 
 export function onNextButtonClick() {
+  //substracts by 1 if pageIndex smaller than maxPage
   page < maxPage ? (page += 1) : null;
   fetchCharacters();
 }
